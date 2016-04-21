@@ -8,10 +8,10 @@ app = Flask(__name__, template_folder=tmpl_dir)
 
 DATABASEURI = " " #Database uri with username and password goes here
 
+#creating a database engine
 engine = create_engine(DATABASEURI)
 
-# Queries run on database
-
+#queries run on database
 engine.execute("""CREATE TABLE IF NOT EXISTS test (
   id serial,
   name text
@@ -35,8 +35,7 @@ def teardown_request(exception):
   except Exception as e:
     pass
 
-# Routes
-
+#different routes to be directed to in the application
 @app.route('/')
 def index():
   print request.args
