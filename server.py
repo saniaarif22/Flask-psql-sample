@@ -35,8 +35,7 @@ def teardown_request(exception):
   except Exception as e:
     pass
 
-# Routes
-
+#different routes to be directed to in the application
 @app.route('/')
 def index():
   print request.args
