@@ -8,10 +8,10 @@ app = Flask(__name__, template_folder=tmpl_dir)
 
 DATABASEURI = " " #Database uri with username and password goes here
 
+#creating a database engine
 engine = create_engine(DATABASEURI)
 
-# Queries run on database
-
+#queries run on database
 engine.execute("""CREATE TABLE IF NOT EXISTS test (
   id serial,
   name text
